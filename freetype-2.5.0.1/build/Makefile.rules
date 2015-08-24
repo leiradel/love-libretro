@@ -1,0 +1,33 @@
+TARGET = $(CORE_DIR)/../libs/libfreetype.$(TARGET_PLATFORM).a
+
+DEFINES  +=
+CFLAGS   += -Wall
+CXXFLAGS += -Wall --std=c++11
+LDFLAGS  +=
+
+DEFINES += -DFT_CONFIG_OPTION_SYSTEM_ZLIB -DFT_CONFIG_OPTION_USE_BZIP2 "-DFT_CONFIG_CONFIG_H=<ftconfig.h>" -DFT2_BUILD_LIBRARY "-DFT_CONFIG_MODULES_H=<ftmodule.h>" -DPIC
+CFLAGS  += -pedantic -ansi
+
+OBJS = $(SOURCES_C:.c=$(OBJEXT)) $(SOURCES_S:.s=$(OBJEXT))
+
+%$(OBJEXT): %.cpp
+	$(CXX) -c -o $@ $< $(CXXFLAGS) $(DEFINES) $(INCLUDES)
+
+%$(OBJEXT): %.c
+	$(CC) -c -o $@ $< $(CFLAGS) $(DEFINES) $(INCLUDES)
+
+%$(OBJEXT): %.s
+	$(AS) -c -o $@ $<
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(AR) rcs $@ $(OBJS)
+
+clean-objs:
+	rm -f $(OBJS)
+
+clean: clean-objs
+	rm -f $(TARGET)
+
+.PHONY: clean-objs clean FORCE

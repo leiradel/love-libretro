@@ -1,0 +1,12 @@
+INCLUDES += \
+  -I$(CORE_DIR)/include \
+  -I$(CORE_DIR)/lib \
+  -I$(CORE_DIR)/../libogg-1.3.1/include
+  
+SOURCES_C = \
+  $(CORE_DIR)/lib/analysis.c $(CORE_DIR)/lib/bitrate.c $(CORE_DIR)/lib/block.c $(CORE_DIR)/lib/codebook.c \
+  $(CORE_DIR)/lib/envelope.c $(CORE_DIR)/lib/floor0.c $(CORE_DIR)/lib/floor1.c $(CORE_DIR)/lib/info.c \
+  $(CORE_DIR)/lib/lookup.c $(CORE_DIR)/lib/lpc.c $(CORE_DIR)/lib/lsp.c $(CORE_DIR)/lib/mapping0.c \
+  $(CORE_DIR)/lib/mdct.c $(CORE_DIR)/lib/psy.c $(CORE_DIR)/lib/registry.c $(CORE_DIR)/lib/res0.c \
+  $(CORE_DIR)/lib/sharedbook.c $(CORE_DIR)/lib/smallft.c $(CORE_DIR)/lib/synthesis.c $(CORE_DIR)/lib/vorbisenc.c \
+  $(CORE_DIR)/lib/window.c $(CORE_DIR)/lib/vorbisfile.c

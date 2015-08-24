@@ -1,0 +1,26 @@
+INCLUDES += \
+  -I$(CORE_DIR)/src
+
+ifeq ($(TARGET_PLATFORM),mingw_x86_64)
+INCLUDES  += -I$(CORE_DIR)/libretro/mingw_x86_64/src
+SOURCES_S += $(CORE_DIR)/libretro/mingw_x86_64/src/lj_vm.s
+else ifeq ($(TARGET_PLATFORM),mingw_x86)
+INCLUDES  += -I$(CORE_DIR)/libretro/mingw_x86/src
+SOURCES_S += $(CORE_DIR)/libretro/mingw_x86/src/lj_vm.s
+endif
+  
+SOURCES_C = \
+  $(CORE_DIR)/src/lj_gc.c $(CORE_DIR)/src/lj_err.c $(CORE_DIR)/src/lj_char.c $(CORE_DIR)/src/lj_bc.c $(CORE_DIR)/src/lj_obj.c \
+  $(CORE_DIR)/src/lj_str.c $(CORE_DIR)/src/lj_tab.c $(CORE_DIR)/src/lj_func.c $(CORE_DIR)/src/lj_udata.c $(CORE_DIR)/src/lj_meta.c $(CORE_DIR)/src/lj_debug.c \
+  $(CORE_DIR)/src/lj_state.c $(CORE_DIR)/src/lj_dispatch.c $(CORE_DIR)/src/lj_vmevent.c $(CORE_DIR)/src/lj_vmmath.c $(CORE_DIR)/src/lj_strscan.c \
+  $(CORE_DIR)/src/lj_api.c $(CORE_DIR)/src/lj_lex.c $(CORE_DIR)/src/lj_parse.c $(CORE_DIR)/src/lj_bcread.c $(CORE_DIR)/src/lj_bcwrite.c $(CORE_DIR)/src/lj_load.c \
+  $(CORE_DIR)/src/lj_ir.c $(CORE_DIR)/src/lj_opt_mem.c $(CORE_DIR)/src/lj_opt_fold.c $(CORE_DIR)/src/lj_opt_narrow.c \
+  $(CORE_DIR)/src/lj_opt_dce.c $(CORE_DIR)/src/lj_opt_loop.c $(CORE_DIR)/src/lj_opt_split.c $(CORE_DIR)/src/lj_opt_sink.c \
+  $(CORE_DIR)/src/lj_mcode.c $(CORE_DIR)/src/lj_snap.c $(CORE_DIR)/src/lj_record.c $(CORE_DIR)/src/lj_crecord.c $(CORE_DIR)/src/lj_ffrecord.c \
+  $(CORE_DIR)/src/lj_asm.c $(CORE_DIR)/src/lj_trace.c $(CORE_DIR)/src/lj_gdbjit.c \
+  $(CORE_DIR)/src/lj_ctype.c $(CORE_DIR)/src/lj_cdata.c $(CORE_DIR)/src/lj_cconv.c $(CORE_DIR)/src/lj_ccall.c $(CORE_DIR)/src/lj_ccallback.c \
+  $(CORE_DIR)/src/lj_carith.c $(CORE_DIR)/src/lj_clib.c $(CORE_DIR)/src/lj_cparse.c \
+  $(CORE_DIR)/src/lj_lib.c $(CORE_DIR)/src/lj_alloc.c $(CORE_DIR)/src/lib_aux.c \
+  $(CORE_DIR)/src/lib_base.c $(CORE_DIR)/src/lib_math.c $(CORE_DIR)/src/lib_bit.c $(CORE_DIR)/src/lib_string.c $(CORE_DIR)/src/lib_table.c \
+  $(CORE_DIR)/src/lib_io.c $(CORE_DIR)/src/lib_os.c $(CORE_DIR)/src/lib_package.c $(CORE_DIR)/src/lib_debug.c $(CORE_DIR)/src/lib_jit.c $(CORE_DIR)/src/lib_ffi.c \
+  $(CORE_DIR)/src/lib_init.c

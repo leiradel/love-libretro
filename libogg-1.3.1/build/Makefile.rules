@@ -1,0 +1,30 @@
+TARGET = $(CORE_DIR)/../libs/libogg.$(TARGET_PLATFORM).a
+
+DEFINES  += -DHAVE_CONFIG_H -D_REENTRANT -DPIC
+CFLAGS   += -Wall -fno-exceptions -ffast-math
+CXXFLAGS += -Wall -fno-exceptions -ffast-math
+LDFLAGS  +=
+
+OBJS = $(SOURCES_C:.c=$(OBJEXT)) $(SOURCES_CXX:.cpp=$(OBJEXT)) $(SOURCES_S:.s=$(OBJEXT))
+
+%$(OBJEXT): %.cpp
+	$(CXX) -c -o $@ $< $(CXXFLAGS) $(DEFINES) $(INCLUDES)
+
+%$(OBJEXT): %.c
+	$(CC) -c -o $@ $< $(CFLAGS) $(DEFINES) $(INCLUDES)
+
+%$(OBJEXT): %.s
+	$(AS) -c -o $@ $<
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(AR) rcs $@ $(OBJS)
+
+clean-objs:
+	rm -f $(OBJS)
+
+clean: clean-objs
+	rm -f $(TARGET)
+
+.PHONY: clean-objs clean FORCE

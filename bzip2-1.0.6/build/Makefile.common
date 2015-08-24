@@ -1,0 +1,6 @@
+INCLUDES += \
+  -I$(CORE_DIR)
+  
+SOURCES_C = \
+  $(CORE_DIR)/blocksort.c $(CORE_DIR)/huffman.c $(CORE_DIR)/crctable.c $(CORE_DIR)/randtable.c \
+  $(CORE_DIR)/compress.c $(CORE_DIR)/decompress.c $(CORE_DIR)/bzlib.c

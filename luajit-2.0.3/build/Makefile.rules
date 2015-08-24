@@ -1,0 +1,38 @@
+TARGET = $(CORE_DIR)/../libs/libluajit.$(TARGET_PLATFORM).a
+
+DEFINES  +=
+CFLAGS   += -Wall
+CXXFLAGS += -Wall --std=c++11
+LDFLAGS  +=
+
+ifeq ($(TARGET_PLATFORM),mingw_x86_64)
+DEFINES += -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -U_FORTIFY_SOURCE -DLUA_MULTILIB=\"lib\"
+CFLAGS  += -fomit-frame-pointer
+else ifeq ($(TARGET_PLATFORM),mingw_x86)
+DEFINES += -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -U_FORTIFY_SOURCE -march=i686 -DLUA_MULTILIB=\"lib\"
+CFLAGS  += -fomit-frame-pointer
+endif
+
+OBJS = $(SOURCES_C:.c=$(OBJEXT)) $(SOURCES_S:.s=$(OBJEXT))
+
+%$(OBJEXT): %.cpp
+	$(CXX) -c -o $@ $< $(CXXFLAGS) $(DEFINES) $(INCLUDES)
+
+%$(OBJEXT): %.c
+	$(CC) -c -o $@ $< $(CFLAGS) $(DEFINES) $(INCLUDES)
+
+%$(OBJEXT): %.s
+	$(AS) -c -o $@ $<
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(AR) rcs $@ $(OBJS)
+
+clean-objs:
+	rm -f $(OBJS)
+
+clean: clean-objs
+	rm -f $(TARGET)
+
+.PHONY: clean-objs clean FORCE

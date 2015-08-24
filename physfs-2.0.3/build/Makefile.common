@@ -1,0 +1,10 @@
+INCLUDES += \
+  -I$(CORE_DIR) \
+  -I$(CORE_DIR)/../zlib-1.2.8
+  
+SOURCES_C = \
+  $(CORE_DIR)/physfs.c $(CORE_DIR)/physfs_byteorder.c $(CORE_DIR)/physfs_unicode.c $(CORE_DIR)/platform/os2.c \
+  $(CORE_DIR)/platform/pocketpc.c $(CORE_DIR)/platform/posix.c $(CORE_DIR)/platform/unix.c $(CORE_DIR)/platform/macosx.c \
+  $(CORE_DIR)/platform/windows.c $(CORE_DIR)/archivers/dir.c $(CORE_DIR)/archivers/grp.c $(CORE_DIR)/archivers/hog.c \
+  $(CORE_DIR)/archivers/lzma.c $(CORE_DIR)/archivers/mvl.c $(CORE_DIR)/archivers/qpak.c $(CORE_DIR)/archivers/wad.c \
+  $(CORE_DIR)/archivers/zip.c

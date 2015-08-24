@@ -1,0 +1,8 @@
+INCLUDES += \
+  -I$(CORE_DIR)
+  
+SOURCES_C = \
+  $(CORE_DIR)/adler32.c $(CORE_DIR)/compress.c $(CORE_DIR)/crc32.c $(CORE_DIR)/deflate.c \
+  $(CORE_DIR)/gzclose.c $(CORE_DIR)/gzlib.c $(CORE_DIR)/gzread.c $(CORE_DIR)/gzwrite.c \
+  $(CORE_DIR)/infback.c $(CORE_DIR)/inffast.c $(CORE_DIR)/inflate.c $(CORE_DIR)/inftrees.c \
+  $(CORE_DIR)/trees.c $(CORE_DIR)/uncompr.c $(CORE_DIR)/zutil.c
