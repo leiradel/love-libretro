@@ -8,6 +8,7 @@ all:
 	cd luajit-2.0.3/build && make -f Makefile.$(platform)
 	cd physfs-2.0.3/build && make -f Makefile.$(platform)
 	cd zlib-1.2.8/build && make -f Makefile.$(platform)
+	cd openal-soft-1.16.0/build && make -f Makefile.$(platform)
 
 clean:
 	cd bzip2-1.0.6/build && make -f Makefile.$(platform) clean
@@ -19,3 +20,4 @@ clean:
 	cd luajit-2.0.3/build && make -f Makefile.$(platform) clean
 	cd physfs-2.0.3/build && make -f Makefile.$(platform) clean
 	cd zlib-1.2.8/build && make -f Makefile.$(platform) clean
+	cd openal-soft-1.16.0/build && make -f Makefile.$(platform) clean
