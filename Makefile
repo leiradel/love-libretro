@@ -9,6 +9,7 @@ all:
 	cd physfs-2.0.3/build && make -f Makefile.$(platform)
 	cd zlib-1.2.8/build && make -f Makefile.$(platform)
 	cd openal-soft-1.16.0/build && make -f Makefile.$(platform)
+	cd love-6370a05c13c2/build && make -f Makefile.$(platform)
 
 clean:
 	cd bzip2-1.0.6/build && make -f Makefile.$(platform) clean
