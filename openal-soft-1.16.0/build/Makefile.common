@@ -51,7 +51,6 @@ SOURCES_C = \
   $(CORE_DIR)/Alc/mixer_c.c \
   $(CORE_DIR)/Alc/mixer_sse.c \
   $(CORE_DIR)/Alc/mixer_sse2.c \
-  $(CORE_DIR)/Alc/mixer_sse41.c \
   $(CORE_DIR)/Alc/midi/base.c \
   $(CORE_DIR)/Alc/midi/sf2load.c \
   $(CORE_DIR)/Alc/midi/dummy.c \

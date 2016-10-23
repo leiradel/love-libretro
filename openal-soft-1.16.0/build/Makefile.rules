@@ -1,4 +1,4 @@
-TARGET = $(CORE_DIR)/../libs/libbz2.$(TARGET_PLATFORM).a
+TARGET = $(CORE_DIR)/../libs/libopenal.$(TARGET_PLATFORM).a
 
 DEFINES  += -D_FILE_OFFSET_BITS=64
 CFLAGS   += -Wall -Winline
