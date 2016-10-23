@@ -4,6 +4,8 @@ INCLUDES += \
   -I$(CORE_DIR)/include/AL \
   -I$(CORE_DIR)/OpenAL32/Include \
   -I$(CORE_DIR)/Alc
+
+DEFINES += -DAL_ALEXT_PROTOTYPES
   
 SOURCES_C = \
   $(CORE_DIR)/common/atomic.c \
