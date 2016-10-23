@@ -1,0 +1,30 @@
+TARGET = $(CORE_DIR)/../libs/libbz2.$(TARGET_PLATFORM).a
+
+DEFINES  += -D_FILE_OFFSET_BITS=64
+CFLAGS   += -Wall -Winline
+CXXFLAGS += -Wall --std=c++11
+LDFLAGS  +=
+
+OBJS = $(SOURCES_C:.c=$(OBJEXT)) $(SOURCES_S:.s=$(OBJEXT))
+
+%$(OBJEXT): %.cpp
+	$(CXX) -c -o $@ $< $(CXXFLAGS) $(DEFINES) $(INCLUDES)
+
+%$(OBJEXT): %.c
+	$(CC) -c -o $@ $< $(CFLAGS) $(DEFINES) $(INCLUDES)
+
+%$(OBJEXT): %.s
+	$(AS) -c -o $@ $<
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(AR) rcs $@ $(OBJS)
+
+clean-objs:
+	rm -f $(OBJS)
+
+clean: clean-objs
+	rm -f $(TARGET)
+
+.PHONY: clean-objs clean FORCE
