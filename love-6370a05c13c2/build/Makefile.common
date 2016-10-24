@@ -3,8 +3,10 @@ INCLUDES += \
   -I$(CORE_DIR)/src \
   -I$(CORE_DIR)/src/modules \
   -I$(CORE_DIR)/src/libraries \
-  -I$(CORE_DIR)/src//libraries/enet/libenet/include \
+  -I$(CORE_DIR)/src/libraries/enet/libenet/include \
   -I$(CORE_DIR)/../luajit-2.0.3/src
+
+DEFINES += -DHAS_SOCKLEN_T
 
 SOURCES_CXX += $(CORE_DIR)/src/common/Object.cpp
 SOURCES_CXX += $(CORE_DIR)/src/common/b64.cpp
