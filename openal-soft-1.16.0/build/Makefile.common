@@ -56,11 +56,4 @@ SOURCES_C = \
   $(CORE_DIR)/Alc/midi/dummy.c \
   $(CORE_DIR)/Alc/midi/fluidsynth.c \
   $(CORE_DIR)/Alc/midi/soft.c \
-  $(CORE_DIR)/Alc/backends/base.c \
-  $(CORE_DIR)/Alc/backends/loopback.c \
-  $(CORE_DIR)/Alc/backends/null.c \
-  $(CORE_DIR)/Alc/backends/alsa.c \
-  $(CORE_DIR)/Alc/backends/oss.c \
-  $(CORE_DIR)/Alc/backends/pulseaudio.c \
-  $(CORE_DIR)/Alc/backends/wave.c \
-
+  $(CORE_DIR)/Alc/backends/dsound.c
