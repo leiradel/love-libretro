@@ -137,7 +137,7 @@ bool System::openURL(const std::string &url) const
 	                                 nullptr,
 	                                 SW_SHOW);
 
-	return (int) result > 32;
+	return (intptr_t) result > 32;
 
 #endif
 }
