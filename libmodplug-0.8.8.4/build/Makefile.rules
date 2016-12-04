@@ -1,6 +1,6 @@
 TARGET = $(CORE_DIR)/../libs/libmodplug.$(TARGET_PLATFORM).a
 
-DEFINES  += -DHAVE_CONFIG_H -D_REENTRANT -DPIC
+DEFINES  += -DHAVE_CONFIG_H -D_REENTRANT -Dsetenv\(a,b,c\)= -DPIC
 CFLAGS   += -Wall -fno-exceptions -ffast-math
 CXXFLAGS += -Wall -fno-exceptions -ffast-math
 LDFLAGS  +=
