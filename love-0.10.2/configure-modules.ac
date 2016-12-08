@@ -1,0 +1,344 @@
+AC_ARG_ENABLE([module-audio], [  --disable-module-audio    Turn off module love.audio], [], [enable_audio=true])
+AH_TEMPLATE([LOVE_ENABLE_AUDIO], [])
+if test x"$enable_audio" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_AUDIO], [])
+fi
+AM_CONDITIONAL([LOVE_MODULE_AUDIO], [test x$enable_audio = xtrue])
+
+AC_ARG_ENABLE([implementation-audio-null], [  --disable-implementation-audio-null    Turn off implementation love.audio.null], [], [enable_audio_null=true])
+AH_TEMPLATE([LOVE_ENABLE_AUDIO_NULL], [])
+if test x"$enable_audio_null" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_AUDIO_NULL], [])
+fi
+AM_CONDITIONAL([LOVE_IMPLEMENTATION_AUDIO_NULL], [test x$enable_audio_null = xtrue])
+
+AC_ARG_ENABLE([implementation-audio-openal], [  --disable-implementation-audio-openal    Turn off implementation love.audio.openal], [], [enable_audio_openal=true])
+AH_TEMPLATE([LOVE_ENABLE_AUDIO_OPENAL], [])
+if test x"$enable_audio_openal" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_AUDIO_OPENAL], [])
+fi
+AM_CONDITIONAL([LOVE_IMPLEMENTATION_AUDIO_OPENAL], [test x$enable_audio_openal = xtrue])
+
+AC_ARG_ENABLE([module-event], [  --disable-module-event    Turn off module love.event], [], [enable_event=true])
+AH_TEMPLATE([LOVE_ENABLE_EVENT], [])
+if test x"$enable_event" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_EVENT], [])
+fi
+AM_CONDITIONAL([LOVE_MODULE_EVENT], [test x$enable_event = xtrue])
+
+AC_ARG_ENABLE([implementation-event-sdl], [  --disable-implementation-event-sdl    Turn off implementation love.event.sdl], [], [enable_event_sdl=true])
+AH_TEMPLATE([LOVE_ENABLE_EVENT_SDL], [])
+if test x"$enable_event_sdl" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_EVENT_SDL], [])
+fi
+AM_CONDITIONAL([LOVE_IMPLEMENTATION_EVENT_SDL], [test x$enable_event_sdl = xtrue])
+
+AC_ARG_ENABLE([module-filesystem], [  --disable-module-filesystem    Turn off module love.filesystem], [], [enable_filesystem=true])
+AH_TEMPLATE([LOVE_ENABLE_FILESYSTEM], [])
+if test x"$enable_filesystem" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_FILESYSTEM], [])
+fi
+AM_CONDITIONAL([LOVE_MODULE_FILESYSTEM], [test x$enable_filesystem = xtrue])
+
+AC_ARG_ENABLE([implementation-filesystem-physfs], [  --disable-implementation-filesystem-physfs    Turn off implementation love.filesystem.physfs], [], [enable_filesystem_physfs=true])
+AH_TEMPLATE([LOVE_ENABLE_FILESYSTEM_PHYSFS], [])
+if test x"$enable_filesystem_physfs" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_FILESYSTEM_PHYSFS], [])
+fi
+AM_CONDITIONAL([LOVE_IMPLEMENTATION_FILESYSTEM_PHYSFS], [test x$enable_filesystem_physfs = xtrue])
+
+AC_ARG_ENABLE([module-font], [  --disable-module-font    Turn off module love.font], [], [enable_font=true])
+AH_TEMPLATE([LOVE_ENABLE_FONT], [])
+if test x"$enable_font" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_FONT], [])
+fi
+AM_CONDITIONAL([LOVE_MODULE_FONT], [test x$enable_font = xtrue])
+
+AC_ARG_ENABLE([implementation-font-freetype], [  --disable-implementation-font-freetype    Turn off implementation love.font.freetype], [], [enable_font_freetype=true])
+AH_TEMPLATE([LOVE_ENABLE_FONT_FREETYPE], [])
+if test x"$enable_font_freetype" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_FONT_FREETYPE], [])
+fi
+AM_CONDITIONAL([LOVE_IMPLEMENTATION_FONT_FREETYPE], [test x$enable_font_freetype = xtrue])
+
+AC_ARG_ENABLE([module-graphics], [  --disable-module-graphics    Turn off module love.graphics], [], [enable_graphics=true])
+AH_TEMPLATE([LOVE_ENABLE_GRAPHICS], [])
+if test x"$enable_graphics" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_GRAPHICS], [])
+fi
+AM_CONDITIONAL([LOVE_MODULE_GRAPHICS], [test x$enable_graphics = xtrue])
+
+AC_ARG_ENABLE([implementation-graphics-opengl], [  --disable-implementation-graphics-opengl    Turn off implementation love.graphics.opengl], [], [enable_graphics_opengl=true])
+AH_TEMPLATE([LOVE_ENABLE_GRAPHICS_OPENGL], [])
+if test x"$enable_graphics_opengl" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_GRAPHICS_OPENGL], [])
+fi
+AM_CONDITIONAL([LOVE_IMPLEMENTATION_GRAPHICS_OPENGL], [test x$enable_graphics_opengl = xtrue])
+
+AC_ARG_ENABLE([module-image], [  --disable-module-image    Turn off module love.image], [], [enable_image=true])
+AH_TEMPLATE([LOVE_ENABLE_IMAGE], [])
+if test x"$enable_image" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_IMAGE], [])
+fi
+AM_CONDITIONAL([LOVE_MODULE_IMAGE], [test x$enable_image = xtrue])
+
+AC_ARG_ENABLE([implementation-image-magpie], [  --disable-implementation-image-magpie    Turn off implementation love.image.magpie], [], [enable_image_magpie=true])
+AH_TEMPLATE([LOVE_ENABLE_IMAGE_MAGPIE], [])
+if test x"$enable_image_magpie" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_IMAGE_MAGPIE], [])
+fi
+AM_CONDITIONAL([LOVE_IMPLEMENTATION_IMAGE_MAGPIE], [test x$enable_image_magpie = xtrue])
+
+AC_ARG_ENABLE([module-joystick], [  --disable-module-joystick    Turn off module love.joystick], [], [enable_joystick=true])
+AH_TEMPLATE([LOVE_ENABLE_JOYSTICK], [])
+if test x"$enable_joystick" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_JOYSTICK], [])
+fi
+AM_CONDITIONAL([LOVE_MODULE_JOYSTICK], [test x$enable_joystick = xtrue])
+
+AC_ARG_ENABLE([implementation-joystick-sdl], [  --disable-implementation-joystick-sdl    Turn off implementation love.joystick.sdl], [], [enable_joystick_sdl=true])
+AH_TEMPLATE([LOVE_ENABLE_JOYSTICK_SDL], [])
+if test x"$enable_joystick_sdl" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_JOYSTICK_SDL], [])
+fi
+AM_CONDITIONAL([LOVE_IMPLEMENTATION_JOYSTICK_SDL], [test x$enable_joystick_sdl = xtrue])
+
+AC_ARG_ENABLE([module-keyboard], [  --disable-module-keyboard    Turn off module love.keyboard], [], [enable_keyboard=true])
+AH_TEMPLATE([LOVE_ENABLE_KEYBOARD], [])
+if test x"$enable_keyboard" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_KEYBOARD], [])
+fi
+AM_CONDITIONAL([LOVE_MODULE_KEYBOARD], [test x$enable_keyboard = xtrue])
+
+AC_ARG_ENABLE([implementation-keyboard-sdl], [  --disable-implementation-keyboard-sdl    Turn off implementation love.keyboard.sdl], [], [enable_keyboard_sdl=true])
+AH_TEMPLATE([LOVE_ENABLE_KEYBOARD_SDL], [])
+if test x"$enable_keyboard_sdl" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_KEYBOARD_SDL], [])
+fi
+AM_CONDITIONAL([LOVE_IMPLEMENTATION_KEYBOARD_SDL], [test x$enable_keyboard_sdl = xtrue])
+
+AC_ARG_ENABLE([module-love], [  --disable-module-love    Turn off module love.love], [], [enable_love=true])
+AH_TEMPLATE([LOVE_ENABLE_LOVE], [])
+if test x"$enable_love" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_LOVE], [])
+fi
+AM_CONDITIONAL([LOVE_MODULE_LOVE], [test x$enable_love = xtrue])
+
+AC_ARG_ENABLE([module-math], [  --disable-module-math    Turn off module love.math], [], [enable_math=true])
+AH_TEMPLATE([LOVE_ENABLE_MATH], [])
+if test x"$enable_math" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_MATH], [])
+fi
+AM_CONDITIONAL([LOVE_MODULE_MATH], [test x$enable_math = xtrue])
+
+AC_ARG_ENABLE([module-mouse], [  --disable-module-mouse    Turn off module love.mouse], [], [enable_mouse=true])
+AH_TEMPLATE([LOVE_ENABLE_MOUSE], [])
+if test x"$enable_mouse" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_MOUSE], [])
+fi
+AM_CONDITIONAL([LOVE_MODULE_MOUSE], [test x$enable_mouse = xtrue])
+
+AC_ARG_ENABLE([implementation-mouse-sdl], [  --disable-implementation-mouse-sdl    Turn off implementation love.mouse.sdl], [], [enable_mouse_sdl=true])
+AH_TEMPLATE([LOVE_ENABLE_MOUSE_SDL], [])
+if test x"$enable_mouse_sdl" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_MOUSE_SDL], [])
+fi
+AM_CONDITIONAL([LOVE_IMPLEMENTATION_MOUSE_SDL], [test x$enable_mouse_sdl = xtrue])
+
+AC_ARG_ENABLE([module-physics], [  --disable-module-physics    Turn off module love.physics], [], [enable_physics=true])
+AH_TEMPLATE([LOVE_ENABLE_PHYSICS], [])
+if test x"$enable_physics" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_PHYSICS], [])
+fi
+AM_CONDITIONAL([LOVE_MODULE_PHYSICS], [test x$enable_physics = xtrue])
+
+AC_ARG_ENABLE([implementation-physics-box2d], [  --disable-implementation-physics-box2d    Turn off implementation love.physics.box2d], [], [enable_physics_box2d=true])
+AH_TEMPLATE([LOVE_ENABLE_PHYSICS_BOX2D], [])
+if test x"$enable_physics_box2d" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_PHYSICS_BOX2D], [])
+fi
+AM_CONDITIONAL([LOVE_IMPLEMENTATION_PHYSICS_BOX2D], [test x$enable_physics_box2d = xtrue])
+
+AC_ARG_ENABLE([module-sound], [  --disable-module-sound    Turn off module love.sound], [], [enable_sound=true])
+AH_TEMPLATE([LOVE_ENABLE_SOUND], [])
+if test x"$enable_sound" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_SOUND], [])
+fi
+AM_CONDITIONAL([LOVE_MODULE_SOUND], [test x$enable_sound = xtrue])
+
+AC_ARG_ENABLE([implementation-sound-lullaby], [  --disable-implementation-sound-lullaby    Turn off implementation love.sound.lullaby], [], [enable_sound_lullaby=true])
+AH_TEMPLATE([LOVE_ENABLE_SOUND_LULLABY], [])
+if test x"$enable_sound_lullaby" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_SOUND_LULLABY], [])
+fi
+AM_CONDITIONAL([LOVE_IMPLEMENTATION_SOUND_LULLABY], [test x$enable_sound_lullaby = xtrue])
+
+AC_ARG_ENABLE([module-system], [  --disable-module-system    Turn off module love.system], [], [enable_system=true])
+AH_TEMPLATE([LOVE_ENABLE_SYSTEM], [])
+if test x"$enable_system" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_SYSTEM], [])
+fi
+AM_CONDITIONAL([LOVE_MODULE_SYSTEM], [test x$enable_system = xtrue])
+
+AC_ARG_ENABLE([implementation-system-sdl], [  --disable-implementation-system-sdl    Turn off implementation love.system.sdl], [], [enable_system_sdl=true])
+AH_TEMPLATE([LOVE_ENABLE_SYSTEM_SDL], [])
+if test x"$enable_system_sdl" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_SYSTEM_SDL], [])
+fi
+AM_CONDITIONAL([LOVE_IMPLEMENTATION_SYSTEM_SDL], [test x$enable_system_sdl = xtrue])
+
+AC_ARG_ENABLE([module-thread], [  --disable-module-thread    Turn off module love.thread], [], [enable_thread=true])
+AH_TEMPLATE([LOVE_ENABLE_THREAD], [])
+if test x"$enable_thread" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_THREAD], [])
+fi
+AM_CONDITIONAL([LOVE_MODULE_THREAD], [test x$enable_thread = xtrue])
+
+AC_ARG_ENABLE([implementation-thread-sdl], [  --disable-implementation-thread-sdl    Turn off implementation love.thread.sdl], [], [enable_thread_sdl=true])
+AH_TEMPLATE([LOVE_ENABLE_THREAD_SDL], [])
+if test x"$enable_thread_sdl" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_THREAD_SDL], [])
+fi
+AM_CONDITIONAL([LOVE_IMPLEMENTATION_THREAD_SDL], [test x$enable_thread_sdl = xtrue])
+
+AC_ARG_ENABLE([module-timer], [  --disable-module-timer    Turn off module love.timer], [], [enable_timer=true])
+AH_TEMPLATE([LOVE_ENABLE_TIMER], [])
+if test x"$enable_timer" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_TIMER], [])
+fi
+AM_CONDITIONAL([LOVE_MODULE_TIMER], [test x$enable_timer = xtrue])
+
+AC_ARG_ENABLE([implementation-timer-sdl], [  --disable-implementation-timer-sdl    Turn off implementation love.timer.sdl], [], [enable_timer_sdl=true])
+AH_TEMPLATE([LOVE_ENABLE_TIMER_SDL], [])
+if test x"$enable_timer_sdl" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_TIMER_SDL], [])
+fi
+AM_CONDITIONAL([LOVE_IMPLEMENTATION_TIMER_SDL], [test x$enable_timer_sdl = xtrue])
+
+AC_ARG_ENABLE([module-touch], [  --disable-module-touch    Turn off module love.touch], [], [enable_touch=true])
+AH_TEMPLATE([LOVE_ENABLE_TOUCH], [])
+if test x"$enable_touch" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_TOUCH], [])
+fi
+AM_CONDITIONAL([LOVE_MODULE_TOUCH], [test x$enable_touch = xtrue])
+
+AC_ARG_ENABLE([implementation-touch-sdl], [  --disable-implementation-touch-sdl    Turn off implementation love.touch.sdl], [], [enable_touch_sdl=true])
+AH_TEMPLATE([LOVE_ENABLE_TOUCH_SDL], [])
+if test x"$enable_touch_sdl" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_TOUCH_SDL], [])
+fi
+AM_CONDITIONAL([LOVE_IMPLEMENTATION_TOUCH_SDL], [test x$enable_touch_sdl = xtrue])
+
+AC_ARG_ENABLE([module-video], [  --disable-module-video    Turn off module love.video], [], [enable_video=true])
+AH_TEMPLATE([LOVE_ENABLE_VIDEO], [])
+if test x"$enable_video" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_VIDEO], [])
+fi
+AM_CONDITIONAL([LOVE_MODULE_VIDEO], [test x$enable_video = xtrue])
+
+AC_ARG_ENABLE([implementation-video-theora], [  --disable-implementation-video-theora    Turn off implementation love.video.theora], [], [enable_video_theora=true])
+AH_TEMPLATE([LOVE_ENABLE_VIDEO_THEORA], [])
+if test x"$enable_video_theora" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_VIDEO_THEORA], [])
+fi
+AM_CONDITIONAL([LOVE_IMPLEMENTATION_VIDEO_THEORA], [test x$enable_video_theora = xtrue])
+
+AC_ARG_ENABLE([module-window], [  --disable-module-window    Turn off module love.window], [], [enable_window=true])
+AH_TEMPLATE([LOVE_ENABLE_WINDOW], [])
+if test x"$enable_window" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_WINDOW], [])
+fi
+AM_CONDITIONAL([LOVE_MODULE_WINDOW], [test x$enable_window = xtrue])
+
+AC_ARG_ENABLE([implementation-window-sdl], [  --disable-implementation-window-sdl    Turn off implementation love.window.sdl], [], [enable_window_sdl=true])
+AH_TEMPLATE([LOVE_ENABLE_WINDOW_SDL], [])
+if test x"$enable_window_sdl" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_WINDOW_SDL], [])
+fi
+AM_CONDITIONAL([LOVE_IMPLEMENTATION_WINDOW_SDL], [test x$enable_window_sdl = xtrue])
+
+AC_ARG_ENABLE([library-Box2D], [  --disable-library-Box2D    Turn off library love.Box2D], [], [enable_Box2D=true])
+AH_TEMPLATE([LOVE_ENABLE_BOX2D], [])
+if test x"$enable_Box2D" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_BOX2D], [])
+fi
+AM_CONDITIONAL([LOVE_LIBRARY_BOX2D], [test x$enable_Box2D = xtrue])
+
+AC_ARG_ENABLE([library-ddsparse], [  --disable-library-ddsparse    Turn off library love.ddsparse], [], [enable_ddsparse=true])
+AH_TEMPLATE([LOVE_ENABLE_DDSPARSE], [])
+if test x"$enable_ddsparse" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_DDSPARSE], [])
+fi
+AM_CONDITIONAL([LOVE_LIBRARY_DDSPARSE], [test x$enable_ddsparse = xtrue])
+
+AC_ARG_ENABLE([library-enet], [  --disable-library-enet    Turn off library love.enet], [], [enable_enet=true])
+AH_TEMPLATE([LOVE_ENABLE_ENET], [])
+if test x"$enable_enet" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_ENET], [])
+fi
+AM_CONDITIONAL([LOVE_LIBRARY_ENET], [test x$enable_enet = xtrue])
+
+AC_ARG_ENABLE([library-glad], [  --disable-library-glad    Turn off library love.glad], [], [enable_glad=true])
+AH_TEMPLATE([LOVE_ENABLE_GLAD], [])
+if test x"$enable_glad" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_GLAD], [])
+fi
+AM_CONDITIONAL([LOVE_LIBRARY_GLAD], [test x$enable_glad = xtrue])
+
+AC_ARG_ENABLE([library-lodepng], [  --disable-library-lodepng    Turn off library love.lodepng], [], [enable_lodepng=true])
+AH_TEMPLATE([LOVE_ENABLE_LODEPNG], [])
+if test x"$enable_lodepng" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_LODEPNG], [])
+fi
+AM_CONDITIONAL([LOVE_LIBRARY_LODEPNG], [test x$enable_lodepng = xtrue])
+
+AC_ARG_ENABLE([library-luasocket], [  --disable-library-luasocket    Turn off library love.luasocket], [], [enable_luasocket=true])
+AH_TEMPLATE([LOVE_ENABLE_LUASOCKET], [])
+if test x"$enable_luasocket" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_LUASOCKET], [])
+fi
+AM_CONDITIONAL([LOVE_LIBRARY_LUASOCKET], [test x$enable_luasocket = xtrue])
+
+AC_ARG_ENABLE([library-luautf8], [  --disable-library-luautf8    Turn off library love.luautf8], [], [enable_luautf8=true])
+AH_TEMPLATE([LOVE_ENABLE_LUAUTF8], [])
+if test x"$enable_luautf8" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_LUAUTF8], [])
+fi
+AM_CONDITIONAL([LOVE_LIBRARY_LUAUTF8], [test x$enable_luautf8 = xtrue])
+
+AC_ARG_ENABLE([library-lz4], [  --disable-library-lz4    Turn off library love.lz4], [], [enable_lz4=true])
+AH_TEMPLATE([LOVE_ENABLE_LZ4], [])
+if test x"$enable_lz4" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_LZ4], [])
+fi
+AM_CONDITIONAL([LOVE_LIBRARY_LZ4], [test x$enable_lz4 = xtrue])
+
+AC_ARG_ENABLE([library-noise1234], [  --disable-library-noise1234    Turn off library love.noise1234], [], [enable_noise1234=true])
+AH_TEMPLATE([LOVE_ENABLE_NOISE1234], [])
+if test x"$enable_noise1234" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_NOISE1234], [])
+fi
+AM_CONDITIONAL([LOVE_LIBRARY_NOISE1234], [test x$enable_noise1234 = xtrue])
+
+AC_ARG_ENABLE([library-stb], [  --disable-library-stb    Turn off library love.stb], [], [enable_stb=true])
+AH_TEMPLATE([LOVE_ENABLE_STB], [])
+if test x"$enable_stb" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_STB], [])
+fi
+AM_CONDITIONAL([LOVE_LIBRARY_STB], [test x$enable_stb = xtrue])
+
+AC_ARG_ENABLE([library-utf8], [  --disable-library-utf8    Turn off library love.utf8], [], [enable_utf8=true])
+AH_TEMPLATE([LOVE_ENABLE_UTF8], [])
+if test x"$enable_utf8" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_UTF8], [])
+fi
+AM_CONDITIONAL([LOVE_LIBRARY_UTF8], [test x$enable_utf8 = xtrue])
+
+AC_ARG_ENABLE([library-Wuff], [  --disable-library-Wuff    Turn off library love.Wuff], [], [enable_Wuff=true])
+AH_TEMPLATE([LOVE_ENABLE_WUFF], [])
+if test x"$enable_Wuff" = xtrue; then
+    AC_DEFINE([LOVE_ENABLE_WUFF], [])
+fi
+AM_CONDITIONAL([LOVE_LIBRARY_WUFF], [test x$enable_Wuff = xtrue])
+
+AC_SUBST([LOVE_SUFFIX], [])

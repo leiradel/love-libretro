@@ -1,6 +1,0 @@
-INCLUDES += \
-  -I$(CORE_DIR)/src \
-  -I$(CORE_DIR)/include
-  
-SOURCES_C = \
-  $(CORE_DIR)/src/framing.c $(CORE_DIR)/src/bitwise.c
